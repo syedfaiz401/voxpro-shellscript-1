@@ -13,10 +13,8 @@ jobs:
         #with:
           #token: ${{ secrets.VOX_GITHUB_TOKEN }}
       - name: Clone repository
-        run: sudo apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+        run: sudo git clone https://github.com/rbenv/rbenv.git ~/.rbenv
       - name:   Install Rbenv
-        run: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-      - name: You echo
         run: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
              echo 'eval "$(rbenv init -)"' >> ~/.bashrc
              source ~/.bashrc
