@@ -15,9 +15,9 @@ jobs:
       - name: Clone repository
         run: sudo git clone https://github.com/rbenv/rbenv.git ~/.rbenv
       - name:   Install Rbenv
-        run: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-             echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-             source ~/.bashrc
+        run: sudo echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+             sudo echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+             sudo source ~/.bashrc
       - name: install ruby2.6.5
         run : sudo apt-get install -y rbenv install 2.6.5
       - name: install global
