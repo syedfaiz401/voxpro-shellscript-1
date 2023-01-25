@@ -4,15 +4,19 @@ on:
   push:
     branches:
       - main
-    
 jobs:
   shell_command:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Ruby
-      uses: actions/setup-ruby@v2
-      with:
-       ruby-version: 2.6.5
-    - name: Show ruby version
-      run: ruby -v
-
+      - name: Setup git
+        uses: actions/checkout@v2
+        #with:
+          #token: ${{ secrets.VOX_GITHUB_TOKEN }}
+      - name: Clone repository
+        run: sudo apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+      - name:   Install Rbenv
+        run: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+      - name: You echo 'export PATH="$HOME
+        run: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+             echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+             source ~/.bashr    
