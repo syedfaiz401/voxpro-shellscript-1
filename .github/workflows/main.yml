@@ -21,6 +21,6 @@ jobs:
              echo 'eval "$(rbenv init -)"' >> ~/.bashrc
              source ~/.bashrc
       - name: install ruby2.6.5
-        run : rbenv install 2.6.5
+        run : sudo apt-get install -y rbenv install 2.6.5
       - name: install global
-        run: rbenv global 2.6.5
+        run: sudo apt-get install -y rbenv global 2.6.5
