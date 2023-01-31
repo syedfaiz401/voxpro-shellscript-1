@@ -23,7 +23,8 @@ jobs:
       - name: install global
         run:  rbenv global 2.6.5
       - name: Notify Slack
-        uses: act10ns/slack@v1
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         with:
