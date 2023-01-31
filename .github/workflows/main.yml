@@ -22,3 +22,9 @@ jobs:
         run: rbenv install 2.6.5
       - name: install global
         run:  rbenv global 2.6.5
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v1
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          args: Deployment started!
