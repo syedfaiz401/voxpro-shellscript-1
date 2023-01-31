@@ -23,8 +23,11 @@ jobs:
       - name: install global
         run:  rbenv global 2.6.5
       - name: Notify Slack
-        uses: slackapi/slack-github-action@v1.23.0
+        uses: act10ns/slack@v1
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         with:
-          args: Deployment started!
+           status: ${{ job.status }}
+           steps: ${{ toJson(steps) }}
+           channel: '#git-hub-action-cicd'
+        if: always()   
