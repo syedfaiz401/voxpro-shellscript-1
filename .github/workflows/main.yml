@@ -26,7 +26,7 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
            status: ${{ job.status }}
            steps: ${{ toJson(steps) }}
