@@ -22,8 +22,8 @@ jobs:
         run: rbenv install 2.6.5
       - name: install global
         run:  rbenv global 2.6.5
-      - id: slack
       - name: Post to a Slack channel
+        id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
           # The following message update step does not accept a channel name.
